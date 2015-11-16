@@ -26,4 +26,4 @@ class TestHomePage(TestCase):
 
         self.assertIn('Test Note for Testing', response.content)
 
-        self.assertEqual(len(response.context['text_notes']), 2)
+        self.assertEqual(len(response.context['object_list']), 2)
