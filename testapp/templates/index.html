@@ -1,0 +1,12 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<h3>Text Notes</h3>
+
+<ul>
+    {% for note in object_list %}
+    <li>{{ note.text }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
