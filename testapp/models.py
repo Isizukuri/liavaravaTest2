@@ -9,6 +9,5 @@ from django.db import models
 class TextNote(models.Model):
     """Text Notes"""
 
-    text = models.CharField(
-        max_length=1000,
+    text = models.TextField(
         verbose_name=u"Tекстові поля")

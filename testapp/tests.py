@@ -24,6 +24,5 @@ class TestHomePage(TestCase):
 
         self.assertEqual(response.status_code, 200)
 
-        self.assertIn('Test Note for Testing', response.content)
-
-        self.assertEqual(len(response.context['object_list']), 2)
+        self.assertQuerysetEqual(TextNote.objects.all(), response.context['object_list'], ordered=False,
+                                msg='*** {0} {1} ***'.format( type(TextNote.objects.all()[0] ), type(response.context['object_list'][0]) ))
