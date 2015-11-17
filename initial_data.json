@@ -1,0 +1,41 @@
+[
+{
+    "fields": {
+        "text": "Text Note 1"
+    },
+    "model": "testapp.textnote",
+    "pk": 1
+},
+{
+    "fields": {
+        "text": "Text Note 2"
+    },
+    "model": "testapp.textnote",
+    "pk": 2
+},
+{
+    "fields": {
+        "text": "Text Note 3"
+    },
+    "model": "testapp.textnote",
+    "pk": 3
+},
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-11-17T08:00:52.702Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$BASPSmUJrYE8$yFRvXnKtJ0fCd2EiFtpE1yLfhxGMHu3xYphyjdW3A8o=",
+        "email": "ragnarok49@gmail.com",
+        "date_joined": "2015-11-17T07:29:30.370Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+}
+]
