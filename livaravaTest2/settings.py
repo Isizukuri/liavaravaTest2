@@ -17,8 +17,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
-
-
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
@@ -88,7 +86,6 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
