@@ -17,8 +17,11 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from testapp.views import TextNoteList
 
+admin.autodiscover()
+
 urlpatterns = patterns('',
                        # TestApp urls
-                       url(r'^$', TextNoteList.as_view(template_name="index.html"), name='home'),
+                       url(r'^$', TextNoteList.as_view(
+                           template_name="index.html"), name='home'),
                        url(r'^admin/', include(admin.site.urls)),
                        )
