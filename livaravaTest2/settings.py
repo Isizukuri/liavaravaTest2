@@ -99,3 +99,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
