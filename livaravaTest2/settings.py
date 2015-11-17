@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'livaravaTest2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -100,5 +100,3 @@ USE_L10N = True
 
 USE_TZ = True
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
