@@ -14,12 +14,14 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 STATIC_ROOT = 'static'
+
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +33,7 @@ SECRET_KEY = '&*z7t82j3itksqblv(0k9ll-b)5j3i=2d-h=7w%)kopy@*9!)5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
