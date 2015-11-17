@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
@@ -100,3 +101,5 @@ USE_L10N = True
 
 USE_TZ = True
 
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
