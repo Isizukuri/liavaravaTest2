@@ -26,5 +26,7 @@ urlpatterns = patterns('',
                        # TestApp urls
                        url(r'^$', TextNoteList.as_view(
                            template_name="index.html"), name='home'),
+                       url(r'^widget/$', TextNoteList.as_view(
+                           template_name="index.html"), name='widget'),
                        url(r'^admin/', include(admin.site.urls)),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
