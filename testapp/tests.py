@@ -30,3 +30,13 @@ class TestHomePage(TestCase):
                                  [repr(response.context['object_list'][0]),
                                   repr(response.context['object_list'][1])],
                                  ordered=False)
+
+    def test_widget(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+
+        self.assertQuerysetEqual(TextNote.objects.all(),
+                                 [repr(response.context['object_list'][0]),
+                                  repr(response.context['object_list'][1])],
+                                 ordered=False)
