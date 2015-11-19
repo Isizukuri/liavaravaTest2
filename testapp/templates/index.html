@@ -1,11 +1,11 @@
 {% extends "base.html" %} 
 
 {% block content %}
+<script type="text/javascript" src="http://127.0.0.1:8000/widget_return/"></script>
 <h3>Text Notes</h3>
 <ul>
     {% for note in object_list %}
     <li>{{ note.text }}</li>
     {% endfor %}
 </ul>
-
 {% endblock content %}
