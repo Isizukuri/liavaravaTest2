@@ -15,8 +15,6 @@ class TestHomePage(TestCase):
         TextNote.objects.get_or_create(
             text="Test Note for Testing 2")
 
-        TextNote.objects.all()
-
         self.client = Client()
 
         self.url = reverse('home')
@@ -30,3 +28,25 @@ class TestHomePage(TestCase):
                                  [repr(response.context['object_list'][0]),
                                   repr(response.context['object_list'][1])],
                                  ordered=False)
+
+
+class TestWidgetPage(TestCase):
+
+    def setUp(self):
+
+        TextNote.objects.get_or_create(
+            text="Test Note for Testing")
+
+        TextNote.objects.get_or_create(
+            text="Test Note for Testing 2")
+
+        self.client = Client()
+
+        self.url = reverse('widget')
+
+    def test_widget_page(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+
+
