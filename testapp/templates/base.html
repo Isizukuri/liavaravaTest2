@@ -22,7 +22,15 @@
             {% endblock logo %}
         </div>
         <!-- End Header -->
- 
+        
+        <!-- NavBar -->
+        <ul class="nav nav-tabs">
+            {% url "home" as home_url%}
+            <li role="presentation" {% if request.path == home_url %} class="active" {% endif %}><a href="{% url "home" %}">Home</a></li>
+            {% url "widget" as widget_url%}
+            <li role="presentation" {% if request.path == widget_url %} class="active" {% endif %}><a href="{% url "widget" %}">Widget</a></li>
+        </ul>
+        <!-- End NavBar -->
 
         <!-- Start Main Page Content -->
         <div class="row" id="content-columns">
@@ -43,6 +51,7 @@
         {% endblock footer %}
     </div>
 
+<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 

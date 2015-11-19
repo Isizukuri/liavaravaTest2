@@ -91,7 +91,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'UTC'
 
@@ -101,4 +101,5 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#import dj_database_url
+#DATABASES['default'] = dj_database_url.config()

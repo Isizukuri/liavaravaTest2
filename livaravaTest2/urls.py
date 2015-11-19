@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from testapp.views import TextNoteList
-
+from testapp.views import TextNoteList, WidgetGet
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,7 +23,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
                        # TestApp urls
-                       url(r'^$', TextNoteList.as_view(
-                           template_name="index.html"), name='home'),
+                       url(r'^$', TextNoteList.as_view(), name='home'),
+                       url(r'^widget/$', WidgetGet.as_view(), name='widget'),
+                       url(r'^widget_return/$', 'testapp.views.widget_return',
+                           name='widget_return'),
                        url(r'^admin/', include(admin.site.urls)),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
