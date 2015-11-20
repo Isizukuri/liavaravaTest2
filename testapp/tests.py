@@ -1,4 +1,4 @@
-from django.test import TestCase, Client
+from django.test import TestCase, SimpleTestCase, Client
 from django.core.urlresolvers import reverse
 
 from .models import TextNote
@@ -50,3 +50,20 @@ class TestWidgetPage(TestCase):
         self.assertEqual(response.status_code, 200)
 
 
+class TestWidgetReturn(TestCase, SimpleTestCase):
+
+    def setUp(self):
+        TextNote.objects.get_or_create(
+            text="Test Note for Testing")
+
+        TextNote.objects.get_or_create(
+            text="Test Note for Testing 2")
+
+        self.client = Client()
+
+        self.url = reverse('widget_return')
+
+    def test_widget_page(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
