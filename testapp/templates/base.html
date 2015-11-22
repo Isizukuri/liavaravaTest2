@@ -29,6 +29,8 @@
             <li role="presentation" {% if request.path == home_url %} class="active" {% endif %}><a href="{% url "home" %}">Home</a></li>
             {% url "widget" as widget_url%}
             <li role="presentation" {% if request.path == widget_url %} class="active" {% endif %}><a href="{% url "widget" %}">Widget</a></li>
+            {% url "requests" as requests_url%}
+            <li role="presentation" {% if request.path == requests_url %} class="active" {% endif %}><a href="{% url "requests" %}">Requests</a></li>
         </ul>
         <!-- End NavBar -->
 

@@ -27,5 +27,7 @@ urlpatterns = patterns('',
                        url(r'^widget/$', WidgetGet.as_view(), name='widget'),
                        url(r'^widget_return/$', 'testapp.views.widget_return',
                            name='widget_return'),
+                       url(r'^requests/$', 'testapp.views.requests_log',
+                           name='requests'),
                        url(r'^admin/', include(admin.site.urls)),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
