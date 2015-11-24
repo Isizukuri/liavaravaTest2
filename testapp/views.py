@@ -3,6 +3,7 @@ import random
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from django.http import HttpResponse
+from django.core import serializers
 
 from .models import TextNote, HttpRequestLogEntry
 
@@ -23,6 +24,10 @@ def widget_return(request):
 
 
 def requests_log(request):
-    entries = HttpRequestLogEntry.objects.all()
-    object_list = entries[:10].reverse
-    return render(request, 'requests.html', {'object_list': object_list})
+    if request.is_ajax():
+        pass
+    else:
+        entries = list(HttpRequestLogEntry.objects.all())
+        entries.reverse()
+        entries = serializers.serialize("json", entries[:10])
+        return render(request, 'requests.html', {'object_list': entries})
